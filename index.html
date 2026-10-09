@@ -5,13 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Athena Handley | Electrical Engineering</title>
   <meta name="description" content="Electrical engineering portfolio of Athena Handley.">
+
+  <!-- Garamond-style serif font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <!-- ============ NAV ============ -->
   <header class="site-header">
-    <a class="brand" href="#about">Athena Handley</a>
+    <a class="brand" href="#about">Your Name</a>
     <nav>
       <a href="#projects">Projects</a>
       <a href="#notes">Notes</a>
@@ -43,53 +49,66 @@
 
         <!-- Project 1 -->
         <article class="project">
-          <div class="project-image empty">
-            <img src="images/project-1.jpg" alt="Describe project 1 here">
-            <div class="placeholder">Project 1 image</div>
-            <label class="upload-btn">
-              Choose image
-              <input type="file" accept="image/*" hidden>
-            </label>
+          <div class="project-meta">
+            <p class="project-date">[Month Year]</p>
+            <p class="project-detail">[Course / Team / Role]</p>
           </div>
-          <div class="project-body">
-            <h3>Inverting Bandpass Op Amp Circuit</h3>
-            <p>
-              This is an inverting bandpass filter circuit that uses the MCP6001 op amp.
-              Provided with a starter file .sch that contained just the op amp, power
-              supplies, and sinusoidal voltage source, I finished implementing the filter
-              using two resistors and two capacitors. I rearranged the corner frequency
-              equation we discussed in class to get the capacitor values and chose the resistor
-              values so that the circuit would have a gain of 10. 
-            </p>
+          <div class="project-content">
+            <div class="project-image empty">
+              <img src="images/project-1.jpg" alt="Describe project 1 here">
+              <div class="placeholder">Project 1 image</div>
+              <label class="upload-btn">
+                Choose image
+                <input type="file" accept="image/*" hidden>
+              </label>
+            </div>
+            <div class="project-body">
+              <h3>Inverting Bandpass Op Amp Circuit</h3>
+              <p>
+                This is an inverting bandpass filter circuit that uses the MCP6001 op amp.
+                Provided with a starter file .sch that contained just the op amp, power
+                supplies, and sinusoidal voltage source, I finished implementing the filter
+                using two resistors and two capacitors. I rearranged the corner frequency
+                equation we discussed in class to get the capacitor values and chose the resistor
+                values so that the circuit would have a gain of 10. 
+              </p>
+            </div>
           </div>
         </article>
 
         <!-- Project 2 -->
         <article class="project">
-          <div class="project-image empty">
-            <img src="images/project-2.jpg" alt="Describe project 2 here">
-            <div class="placeholder">Project 2 image</div>
-            <label class="upload-btn">
-              Choose image
-              <input type="file" accept="image/*" hidden>
-            </label>
+          <div class="project-meta">
+            <p class="project-date">[Month Year]</p>
+            <p class="project-detail">[Course / Team / Role]</p>
           </div>
-          <div class="project-body">
-            <h3>Homework Circuit Analysis</h3>
-            <p>
-              These two circuits are circuits we had to solve as homework problems. I
-              solved the circuits by hand first and then built and simulated them in 
-              Ngspice/Qucs-s to check my answers. These circuits demonstrate node voltage
-              concepts.
-            </p>
+          <div class="project-content">
+            <div class="project-image empty">
+              <img src="images/project-2.jpg" alt="Describe project 2 here">
+              <div class="placeholder">Project 2 image</div>
+              <label class="upload-btn">
+                Choose image
+                <input type="file" accept="image/*" hidden>
+              </label>
+            </div>
+            <div class="project-body">
+              <h3>Homework Circuit Analysis</h3>
+              <p>
+                These two circuits are circuits we had to solve as homework problems. I
+                solved the circuits by hand first and then built and simulated them in 
+                Ngspice/Qucs-s to check my answers. These circuits demonstrate node voltage
+                concepts.
+              </p>
+            </div>
           </div>
         </article>
 
       </div>
     </section>
 
+    <!-- ============ SECTION 3: NOTE ABOUT THE PORTFOLIO ============ -->
     <section id="notes">
-      <h2>Future Efforts</h2>
+      <h2>A Note on This Portfolio</h2>
       <p class="note">
         This semester in Electronic Circuit Design I have learned how to build and
         simulate circuits using Ngspice and Qucs-s. I have gained a deeper understanding
