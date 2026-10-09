@@ -32,7 +32,7 @@
       <p class="role">Electrical Engineering Digital Portfolio</p>
       <p class="intro">
         I am currently a junior attending Brigham Young University. I am majoring in electrical
-        engineering and minoring in astronomy and mathematics. I am interested in research, 
+        engineering and minoring in astronomy and mathematics. I am interested in research,
         soldering, developing or testing hardware, and signal and mathematical analysis.
       </p>
       <p class="links">
@@ -51,7 +51,7 @@
           <div class="project-meta">
           </div>
           <div class="project-content">
-            <div class="project-image empty">
+            <div class="project-image">
               <img src="project-1.jpg" alt="Describe project 1 here">
               <div class="placeholder">Project 1 image</div>
             </div>
@@ -63,7 +63,7 @@
                 supplies, and sinusoidal voltage source, I finished implementing the filter
                 using two resistors and two capacitors. I rearranged the corner frequency
                 equation we discussed in class to get the capacitor values and chose the resistor
-                values so that the circuit would have a gain of 10. 
+                values so that the circuit would have a gain of 10.
               </p>
             </div>
           </div>
@@ -74,7 +74,7 @@
           <div class="project-meta">
           </div>
           <div class="project-content">
-            <div class="project-image empty">
+            <div class="project-image">
               <img src="project-2.jpg" alt="Describe project 2 here">
               <div class="placeholder">Project 2 image</div>
             </div>
@@ -82,7 +82,7 @@
               <h3>Homework Circuit Analysis</h3>
               <p>
                 These two circuits are circuits we had to solve as homework problems. I
-                solved the circuits by hand first and then built and simulated them in 
+                solved the circuits by hand first and then built and simulated them in
                 Ngspice/Qucs-s to check my answers. These circuits demonstrate node voltage
                 concepts.
               </p>
@@ -99,7 +99,7 @@
       <p class="note">
         This semester in Electronic Circuit Design I have learned how to build and
         simulate circuits using Ngspice and Qucs-s. I have gained a deeper understanding
-        of how to solve circuits with sinusoidal voltage and current sources. I plan on 
+        of how to solve circuits with sinusoidal voltage and current sources. I plan on
         improving in my knowledge and study of circuit design by building more circuits
         using diodes to better understand semiconductor circuits.
       </p>
@@ -110,6 +110,12 @@
   <footer>
     <p>&copy; <span id="year">2026</span></p>
   </footer>
+
+  <!-- Popup that shows a project image at full size -->
+  <dialog id="lightbox" class="lightbox" aria-label="Enlarged image">
+    <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
+    <img src="" alt="">
+  </dialog>
 
   <script src="script.js" defer></script>
 </body>
