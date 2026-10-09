@@ -1,5 +1,5 @@
 // Set to false before you publish, so visitors don't see the "Choose image" buttons.
-const SHOW_UPLOAD_BUTTONS = true;
+const SHOW_UPLOAD_BUTTONS = false;
 
 // Footer year
 const yearEl = document.getElementById("year");
