@@ -1,0 +1,160 @@
+/* ---------- Theme (edit these to restyle everything) ---------- */
+:root {
+  --bg: #ffffff;
+  --surface: #f5f6f8;
+  --text: #1c1f24;
+  --muted: #5c6370;
+  --accent: #2563eb;
+  --border: #e2e5ea;
+  --radius: 12px;
+  --max-width: 960px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111418;
+    --surface: #1a1f26;
+    --text: #e8eaed;
+    --muted: #9aa3b0;
+    --accent: #6ea0ff;
+    --border: #2a313b;
+  }
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 4rem 1.25rem;
+}
+
+h1, h2, h3 { line-height: 1.2; margin: 0 0 0.75rem; }
+h1 { font-size: clamp(2.25rem, 6vw, 3.5rem); }
+h2 { font-size: 1.75rem; margin-bottom: 1.5rem; }
+h3 { font-size: 1.25rem; }
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 1.25rem;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.brand { font-weight: 700; color: var(--text); }
+.site-header nav a { margin-left: 1.25rem; color: var(--muted); }
+.site-header nav a:hover { color: var(--accent); text-decoration: none; }
+
+/* ---------- Section 1: Hero ---------- */
+.hero { padding-top: 5rem; padding-bottom: 3rem; }
+.eyebrow {
+  margin: 0 0 0.5rem;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.role { font-size: 1.25rem; color: var(--muted); margin: 0 0 1.25rem; }
+.intro { max-width: 640px; margin: 0 0 1.5rem; }
+.links a { margin-right: 1.25rem; font-weight: 600; }
+
+/* ---------- Section 2: Projects ---------- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.project-image {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: var(--border);
+}
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.project-image .placeholder {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.project-image.empty img { visibility: hidden; }
+.project-image.empty .placeholder { display: flex; }
+
+.upload-btn {
+  position: absolute;
+  right: 0.6rem;
+  bottom: 0.6rem;
+  padding: 0.35rem 0.75rem;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.upload-btn:hover { background: rgba(0, 0, 0, 0.85); }
+
+.project-body { padding: 1.25rem; }
+.tags { margin: 0 0 0.75rem; color: var(--muted); font-size: 0.9rem; }
+.project-body p { margin-top: 0; }
+.project-link { font-weight: 600; font-size: 0.95rem; }
+
+/* ---------- Section 3: Note ---------- */
+.note {
+  max-width: 640px;
+  padding-left: 1rem;
+  border-left: 3px solid var(--accent);
+  color: var(--muted);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 2rem 1.25rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border);
+}
+footer p { margin: 0; }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 720px) {
+  .project-grid { grid-template-columns: 1fr; }
+  section { padding: 3rem 1.25rem; }
+}
