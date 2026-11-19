@@ -97,7 +97,9 @@ h3 { font-size: 1.1rem; }
   border: 1px solid var(--rule);
 }
 /* An optional photo with no image file disappears (its slot stays empty) */
-.project-image.optional.empty { display: none; }
+.project-image.empty { display: none; }
+.project-photos:not(:has(.project-image:not(.empty))) { display: none; }
+.project-photos:not(:has(.project-image:not(.empty))) + .project-body { margin-top: 0; }
 .project-image img {
   width: 100%;
   height: 100%;
