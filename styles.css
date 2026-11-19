@@ -8,7 +8,10 @@
   --rule: #000000;          /* lines and image borders */
   --placeholder: #cccccc;   /* empty image box */
   --font: "EB Garamond", Garamond, "Times New Roman", Georgia, serif;
-  --max-width: 680px;
+  /* Page column width. Side margins are whatever is left over, so a bigger
+     number = smaller margins. 872px is 192px (2 in) wider than before, which
+     takes about 1 inch off each side on a wide screen. */
+  --max-width: 872px;
 }
 
 /* ---------- Base ---------- */
@@ -35,7 +38,7 @@ section {
 }
 
 h1, h2, h3 { color: var(--heading); line-height: 1.2; margin: 0 0 0.75rem; }
-h1 { font-size: clamp(2.25rem, 6vw, 3.5rem); }
+h1 { font-size: clamp(1.75rem, 5vw, 2.25rem); }
 h2 { font-size: 1.75rem; margin-bottom: 2rem; }
 h3 { font-size: 1.1rem; }
 
@@ -70,37 +73,31 @@ h3 { font-size: 1.1rem; }
 .links a { margin-right: 1.25rem; font-weight: 600; }
 
 /* ---------- Section 2: Projects ---------- */
-/* Two projects per row. Add more <article class="project"> blocks and they
-   wrap into new rows automatically. */
+/* One project per row: a row of up to three photos, then the title, then the
+   description. Add more <article class="project"> blocks to add more projects. */
 .project-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* Photo row: three equal slots. Photos 2 and 3 are optional. */
+.project-photos {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 4rem 2rem;              /* row gap, column gap */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
   align-items: start;
 }
 
-/* Optional date / detail line above each image (leave empty to hide) */
-.project-meta { font-size: 0.85rem; }
-.project-meta p:last-child { margin-bottom: 0.75rem; }
-.project-date {
-  display: inline-block;
-  margin: 0;
-  padding-bottom: 0.35rem;
-  border-bottom: 1px solid var(--rule);
-  color: var(--heading);
-}
-.project-detail {
-  margin: 0.35rem 0 0;
-  color: var(--muted);
-}
-
-/* Right column: bordered image, then caption */
+/* Bordered photo */
 .project-image {
   position: relative;
-  aspect-ratio: 2 / 1;
+  aspect-ratio: 3 / 2;
   background: var(--placeholder);
   border: 1px solid var(--rule);
 }
+/* An optional photo with no image file disappears (its slot stays empty) */
+.project-image.optional.empty { display: none; }
 .project-image img {
   width: 100%;
   height: 100%;
@@ -133,7 +130,7 @@ h3 { font-size: 1.1rem; }
 }
 .upload-btn:hover { background: rgba(0, 0, 0, 0.9); }
 
-.project-body { margin-top: 1rem; }
+.project-body { margin-top: 1rem; max-width: 40rem; }
 .project-body h3 { margin: 0 0 0.15rem; font-weight: 700; }
 .tags { margin: 0 0 0.5rem; color: var(--muted); font-size: 0.9rem; }
 .project-body p { margin-top: 0; }
@@ -198,5 +195,5 @@ footer p { margin: 0; }
 /* ---------- Mobile ---------- */
 @media (max-width: 600px) {
   section { padding: 3rem 1.25rem; }
-  .project-grid { grid-template-columns: 1fr; }   /* stack on phones */
+  .project-photos { gap: 0.5rem; }   /* keep three photos in a row on phones */
 }
